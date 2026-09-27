@@ -139,6 +139,17 @@ for output in outputs:
     print("-" * 50)
 ```
 
+### Qwen3-ASR
+
+Qwen3-ASR inference is supported in AOT mode with a precompiled QAIC QPC. See the [Qwen3-ASR guide](docs/docs/user_guide/features/qwen3_asr.md) for the QPC shape requirements, one-shot example, and persistent benchmark.
+
+```bash
+python examples/qaic_qwen3_asr.py /path/to/audio.wav \
+  --device-ids 0 \
+  --qpc-path /path/to/qpc
+```
+
+The example keeps model loading outside the timed request and accepts the QPC, device group, compiler checkout, prefill length, encoder context, and generation limit through command-line options or environment variables.
 ## Models Supported
 
 ### Ahead-of-Time Compiled Mode
